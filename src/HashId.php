@@ -32,6 +32,17 @@ class HashId extends ID implements IdEncoder
     }
 
     /**
+     * HashId constructor.
+     *
+     * @param string|null $column
+     */
+    public function __construct(string $column = null)
+    {
+        parent::__construct($column);
+        $this->matchAs('[a-zA-Z0-9]+');
+    }
+
+    /**
      * @var string|null
      */
     private ?string $connection = null;

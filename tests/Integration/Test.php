@@ -22,6 +22,15 @@ class Test extends TestCase
         $this->assertFalse($id->acceptsClientIds());
     }
 
+    public function testMatch(): void
+    {
+        $id = HashId::make();
+
+        $this->assertTrue($id->match(Hashids::encode(
+            random_int(1, 999999)
+        )));
+    }
+
     public function testEncode(): void
     {
         $id = HashId::make();
