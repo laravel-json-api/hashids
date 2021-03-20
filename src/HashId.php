@@ -21,6 +21,11 @@ class HashId extends ID implements IdEncoder
     private static ?string $defaultConnection = null;
 
     /**
+     * @var string|null
+     */
+    private ?string $connection = null;
+
+    /**
      * Set the default hash ids connection.
      *
      * @param string|null $connection
@@ -41,11 +46,6 @@ class HashId extends ID implements IdEncoder
         parent::__construct($column);
         $this->matchAs('[a-zA-Z0-9]+');
     }
-
-    /**
-     * @var string|null
-     */
-    private ?string $connection = null;
 
     /**
      * @param string|null $connection
