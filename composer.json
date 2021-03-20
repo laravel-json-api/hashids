@@ -1,0 +1,51 @@
+{
+    "name": "laravel-json-api/hashids",
+    "description": "Encode model IDs to JSON:API resource IDs.",
+    "keywords": [
+        "jsonapi.org",
+        "json-api",
+        "jsonapi",
+        "laravel"
+    ],
+    "homepage": "https://github.com/laravel-json-api/hashids",
+    "support": {
+        "issues": "https://github.com/laravel-json-api/hashids/issues"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Cloud Creativity Ltd",
+            "email": "info@cloudcreativity.co.uk"
+        },
+        {
+            "name": "Christopher Gammie",
+            "email": "contact@gammie.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelJsonApi\\HashIds\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelJsonApi\\HashIds\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
