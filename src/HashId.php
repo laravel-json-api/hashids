@@ -26,6 +26,11 @@ class HashId extends ID implements IdEncoder
     private ?string $connection = null;
 
     /**
+     * @var bool
+     */
+    private bool $encode = true;
+
+    /**
      * Set the default hash ids connection.
      *
      * @param string|null $connection
@@ -59,10 +64,32 @@ class HashId extends ID implements IdEncoder
     }
 
     /**
+     * Mark the field as receiving model keys that are already encoded.
+     *
+     * If the developer has encoded model keys to hash ids in the `Model::getRouteKey()`
+     * method, then the value received by this HashId class will already be encoded.
+     * In this scenario, the HashId will need to just return the model key value,
+     * rather than attempting to encode it - so this method should be called so that
+     * we know not to encode the model key.
+     *
+     * @return $this
+     */
+    public function alreadyEncoded(): self
+    {
+        $this->encode = false;
+
+        return $this;
+    }
+
+    /**
      * @inheritDoc
      */
     public function encode($modelKey): string
     {
+        if (false === $this->encode) {
+            return $modelKey;
+        }
+
         return $this->hashIds()->encode(
             $modelKey
         );

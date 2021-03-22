@@ -60,6 +60,14 @@ class Test extends TestCase
         $this->assertSame(10, $id->decode($actual));
     }
 
+    public function testAlreadyEncoded(): void
+    {
+        $id = HashId::make()->alreadyEncoded();
+        $value = Hashids::encode(1);
+
+        $this->assertSame($value, $id->encode($value));
+    }
+
     public function testDecodeInvalid(): void
     {
         $value = Hashids::connection('alternative')->encode(99);
