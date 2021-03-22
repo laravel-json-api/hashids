@@ -31,6 +31,16 @@ class HashId extends ID implements IdEncoder
     private bool $encode = true;
 
     /**
+     * Get the default connection.
+     *
+     * @return string|null
+     */
+    public static function defaultConnection(): ?string
+    {
+        return self::$defaultConnection;
+    }
+
+    /**
      * Set the default hash ids connection.
      *
      * @param string|null $connection
@@ -134,7 +144,7 @@ class HashId extends ID implements IdEncoder
     protected function hashIds(): Hashids
     {
         return \Vinkla\Hashids\Facades\Hashids::connection(
-            $this->connection ?? self::$defaultConnection
+            $this->connection ?? self::defaultConnection(),
         );
     }
 

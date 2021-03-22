@@ -53,6 +53,8 @@ class Test extends TestCase
     {
         HashId::withDefaultConnection('alternative');
 
+        $this->assertSame('alternative', HashId::defaultConnection());
+
         $id = HashId::make();
         $actual = $id->encode(10);
 
