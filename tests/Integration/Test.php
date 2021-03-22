@@ -68,6 +68,12 @@ class Test extends TestCase
         $this->assertSame($value, $id->encode($value));
     }
 
+    public function testAlreadyEncodedWithInvalidValue(): void
+    {
+        $this->expectException(\RuntimeException::class);
+        HashId::make()->alreadyEncoded()->encode(1);
+    }
+
     public function testDecodeInvalid(): void
     {
         $value = Hashids::connection('alternative')->encode(99);

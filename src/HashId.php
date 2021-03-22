@@ -86,13 +86,17 @@ class HashId extends ID implements IdEncoder
      */
     public function encode($modelKey): string
     {
-        if (false === $this->encode) {
+        if (true === $this->encode) {
+            return $this->hashIds()->encode(
+                $modelKey
+            );
+        }
+
+        if (is_string($modelKey)) {
             return $modelKey;
         }
 
-        return $this->hashIds()->encode(
-            $modelKey
-        );
+        throw new \RuntimeException('Expecting model key to already be encoded to a string.');
     }
 
     /**
