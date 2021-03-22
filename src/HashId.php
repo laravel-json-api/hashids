@@ -84,7 +84,7 @@ class HashId extends ID implements IdEncoder
      *
      * @return $this
      */
-    public function alreadyEncoded(): self
+    public function alreadyHashed(): self
     {
         $this->encode = false;
 

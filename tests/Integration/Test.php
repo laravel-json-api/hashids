@@ -62,9 +62,9 @@ class Test extends TestCase
         $this->assertSame(10, $id->decode($actual));
     }
 
-    public function testAlreadyEncoded(): void
+    public function testAlreadyHashed(): void
     {
-        $id = HashId::make()->alreadyEncoded();
+        $id = HashId::make()->alreadyHashed();
         $value = Hashids::encode(1);
 
         $this->assertSame($value, $id->encode($value));
@@ -73,7 +73,7 @@ class Test extends TestCase
     public function testAlreadyEncodedWithInvalidValue(): void
     {
         $this->expectException(\RuntimeException::class);
-        HashId::make()->alreadyEncoded()->encode(1);
+        HashId::make()->alreadyHashed()->encode(1);
     }
 
     public function testDecodeInvalid(): void
