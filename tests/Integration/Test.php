@@ -110,7 +110,7 @@ class Test extends TestCase
         $id = HashId::make();
         $value = Hashids::encode(99);
 
-        $id->fill($model = new TestModel(), $value);
+        $id->fill($model = new TestModel(), $value, []);
 
         $this->assertSame(99, $model->getKey());
     }
@@ -120,7 +120,7 @@ class Test extends TestCase
         $id = HashId::make()->useConnection('alternative');
         $value = Hashids::connection('alternative')->encode(99);
 
-        $id->fill($model = new TestModel(), $value);
+        $id->fill($model = new TestModel(), $value, []);
 
         $this->assertSame(99, $model->getKey());
     }
@@ -132,7 +132,7 @@ class Test extends TestCase
         $id = HashId::make();
         $value = Hashids::connection('alternative')->encode(99);
 
-        $id->fill($model = new TestModel(), $value);
+        $id->fill($model = new TestModel(), $value, []);
 
         $this->assertSame(99, $model->getKey());
     }
@@ -143,7 +143,7 @@ class Test extends TestCase
         $value = Hashids::connection('alternative')->encode(99);
 
         $this->expectException(\RuntimeException::class);
-        $id->fill($model = new TestModel(), $value);
+        $id->fill($model = new TestModel(), $value, []);
     }
 
     public function testFillMultipleNumbers(): void
@@ -152,6 +152,6 @@ class Test extends TestCase
         $value = Hashids::connection('alternative')->encode(1, 2, 3);
 
         $this->expectException(\RuntimeException::class);
-        $id->fill($model = new TestModel(), $value);
+        $id->fill($model = new TestModel(), $value, []);
     }
 }
