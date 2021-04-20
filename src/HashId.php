@@ -141,10 +141,10 @@ class HashId extends ID implements IdEncoder
     /**
      * @inheritDoc
      */
-    public function fill(Model $model, $value): void
+    public function fill(Model $model, $value, array $validatedData): void
     {
         if ($decoded = $this->decode($value)) {
-            parent::fill($model, $decoded);
+            parent::fill($model, $decoded, $validatedData);
             return;
         }
 
