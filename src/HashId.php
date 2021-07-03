@@ -21,6 +21,7 @@ namespace LaravelJsonApi\HashIds;
 
 use Hashids\Hashids;
 use Illuminate\Database\Eloquent\Model;
+use InvalidArgumentException;
 use LaravelJsonApi\Contracts\Schema\IdEncoder;
 use LaravelJsonApi\Eloquent\Fields\ID;
 use RuntimeException;
@@ -75,6 +76,21 @@ class HashId extends ID implements IdEncoder
     {
         parent::__construct($column);
         $this->matchAs('[a-zA-Z0-9]+');
+    }
+
+    /**
+     * Use the default pattern with the specified minimum length.
+     *
+     * @param int $length
+     * @return $this
+     */
+    public function withLength(int $length): self
+    {
+        if (0 < $length) {
+            return $this->matchAs(sprintf('[a-zA-Z0-9]{%d,}', $length));
+        }
+
+        throw new InvalidArgumentException('Expecting an integer greater than zero.');
     }
 
     /**
