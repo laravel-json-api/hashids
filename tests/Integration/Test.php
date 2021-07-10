@@ -41,9 +41,18 @@ class Test extends TestCase
     {
         $id = HashId::make();
 
+        $this->assertSame('[a-zA-Z0-9]+', $id->pattern());
+
         $this->assertTrue($id->match(Hashids::encode(
             random_int(1, 999999)
         )));
+    }
+
+    public function testWithLength(): void
+    {
+        $id = HashId::make()->withLength(32);
+
+        $this->assertSame('[a-zA-Z0-9]{32,}', $id->pattern());
     }
 
     public function testEncode(): void
