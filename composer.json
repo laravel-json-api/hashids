@@ -29,7 +29,7 @@
         "vinkla/hashids": "^9.1"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.14",
+        "orchestra/testbench": "^6.23",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
@@ -48,7 +48,7 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": false,
+    "prefer-stable": true,
     "config": {
         "sort-packages": true
     }

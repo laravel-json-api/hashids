@@ -19,12 +19,14 @@ declare(strict_types=1);
 
 namespace LaravelJsonApi\HashIds\Tests\Integration;
 
+use Illuminate\Foundation\Testing\Concerns\InteractsWithDeprecationHandling;
 use LaravelJsonApi\HashIds\HashId;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Vinkla\Hashids\HashidsServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
+    use InteractsWithDeprecationHandling;
 
     /**
      * @return void
@@ -32,6 +34,8 @@ abstract class TestCase extends BaseTestCase
     protected function setUp(): void
     {
         parent::setUp();
+
+        $this->withoutDeprecationHandling();
 
         config()->set('hashids', [
             'default' => 'main',
