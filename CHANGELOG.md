@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file. This projec
 ### Added
 
 - Added support for PHP 8.1.
+- Package now supports v2 of both the `laravel-json-api/core` and `laravel-json-api/eloquent` dependencies.
 
 ## [1.0.0] - 2021-07-31
 
