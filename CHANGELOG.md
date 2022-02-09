@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file. This project adheres to
 [Semantic Versioning](http://semver.org/) and [this changelog format](http://keepachangelog.com/).
 
+## [1.1.0] - 2022-02-09
+
+### Added
+
+- Added support for PHP 8.1.
+- Added support for Laravel 9, and `vinkla/hashids` version 10.
+- Package now supports v2 of both the `laravel-json-api/core` and `laravel-json-api/eloquent` dependencies.
+
 ## [1.0.0] - 2021-07-31
 
 Initial stable release, with no changes from `1.0.0-beta.3`.
