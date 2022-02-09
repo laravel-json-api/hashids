@@ -26,10 +26,10 @@
         "php": "^7.4|^8.0",
         "laravel-json-api/core": "^1.0|^2.0",
         "laravel-json-api/eloquent": "^1.0.1|^2.0",
-        "vinkla/hashids": "^9.1"
+        "vinkla/hashids": "^9.1|^10.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.23",
+        "orchestra/testbench": "^6.23|^7.0",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
@@ -47,7 +47,7 @@
             "dev-develop": "1.x-dev"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "sort-packages": true
