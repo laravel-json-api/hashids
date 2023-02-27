@@ -23,13 +23,13 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "laravel-json-api/core": "^1.0|^2.0",
-        "laravel-json-api/eloquent": "^1.0.1|^2.0",
-        "vinkla/hashids": "^9.1|^10.0"
+        "php": "^8.1",
+        "laravel-json-api/core": "^3.0",
+        "laravel-json-api/eloquent": "^3.0",
+        "vinkla/hashids": "^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.23|^7.0",
+        "orchestra/testbench": "^8.0",
         "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
@@ -44,7 +44,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "1.x-dev"
+            "dev-develop": "2.x-dev"
         }
     },
     "minimum-stability": "stable",
