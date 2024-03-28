@@ -11,7 +11,7 @@
     "support": {
         "issues": "https://github.com/laravel-json-api/hashids/issues"
     },
-    "license": "Apache-2.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Cloud Creativity Ltd",
@@ -23,13 +23,13 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "laravel-json-api/core": "^3.0",
-        "laravel-json-api/eloquent": "^3.0",
-        "vinkla/hashids": "^11.0"
+        "php": "^8.2",
+        "laravel-json-api/core": "^4.0",
+        "laravel-json-api/eloquent": "^4.0",
+        "vinkla/hashids": "^12.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0",
+        "orchestra/testbench": "^9.0",
         "phpunit/phpunit": "^10.0"
     },
     "autoload": {
@@ -44,7 +44,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "2.x-dev"
+            "dev-develop": "3.x-dev"
         }
     },
     "minimum-stability": "stable",
