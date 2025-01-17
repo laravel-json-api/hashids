@@ -24,7 +24,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "laravel-json-api/core": "^4.0",
+        "laravel-json-api/core": "^5.0",
         "laravel-json-api/eloquent": "^4.0",
         "vinkla/hashids": "^12.0"
     },
