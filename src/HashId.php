@@ -64,7 +64,7 @@ class HashId extends ID implements IdEncoder
      *
      * @param string|null $column
      */
-    public function __construct(string $column = null)
+    public function __construct(?string $column = null)
     {
         parent::__construct($column);
         $this->matchAs('[a-zA-Z0-9]+');
