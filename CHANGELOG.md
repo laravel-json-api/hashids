@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file. This projec
 
 ## Unreleased
 
+## [3.1.0] - 2025-01-18
+
 ### Added
 
 - Support `laravel-json-api/core` v4 and v5.
